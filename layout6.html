@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inconsolata:wght@200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1025px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+
+        }
+
+        .main {
+
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .heading {
+            max-width: 948px;
+            font-family: " DM Sans", sans-serif;
+            line-height: 52px;
+            letter-spacing: -0.4px;
+            color: #1E0E62;
+            width: 100%;
+        }
+
+        .heading h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 52px;
+            letter-spacing: -0.4px;
+        }
+
+        .button {
+            max-width: 80px;
+            font-family: " DM Sans", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+            color: #1E0E62;
+            border-radius: 20px;
+            padding: 8px 24px;
+            width: 100%;
+            background-color: white;
+            border: 2px solid #EBEAED;
+            cursor: pointer;
+
+
+        }
+
+        .code-box {
+            max-width: 770px;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+        }
+
+        .code-card {
+            border-radius: 12px;
+
+        }
+
+        .button:hover {
+            background-color: azure;
+        }
+
+        .links {
+            max-width: 698px;
+            font-family: "Inconsolata", monospace;
+            padding: 35px 40px 40px;
+            line-height: 22px;
+            color: #1E0E62;
+            background-color: #EBEAED;
+            width: 100%;
+            border-radius: 10px;
+
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 0px;
+
+        }
+
+        .detail {
+            max-width: 200px;
+            width: 100%;
+            margin-top: 45px;
+        }
+
+        .icon {
+            max-width: 16px;
+            width: 100%;
+
+        }
+
+        .title {
+            max-width: 142px;
+            color: #1E0E62;
+            width: 100%;
+        }
+
+        .content {
+            font-size: 16px;
+            line-height: 26px;
+            color: #15143966;
+            font-family: " DM Sans", sans-serif;
+            max-width: 196px;
+            width: 100%;
+        }
+
+        .btn-action {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .d-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #1E0E62;
+        }
+
+        .d-title h3 {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            max-width: 108px;
+            width: 100%;
+            font-family: " DM Sans", sans-serif;
+        }
+
+      @media (max-width:992px) {
+            .row {
+                flex-wrap: wrap;
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="heading">
+                <h1>How We Did It</h1>
+            </div>
+            <div class="row">
+                <div class="code-card">
+                    <div class="code-box">
+                        <div class="links">
+                            &lt;head&gt;
+                            &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+                            &lt;title&gt;Startup Framework&lt;/title&gt;
+                            &lt;link rel="stylesheet" type="text/css" href="style.css" /&gt;
+                            &lt;link rel="alternate" type="application/rss+xml" title="Startup Framework"
+                            href="/rss.xml" /&gt;
+                            &lt;link rel="search" type="application/opensearchdescription+xml" title="Search"
+                            href="/sites/search/search.xml" /&gt;
+                            &lt;link rel="shortcut icon" href="/favicon.ico" /&gt;
+                            &lt;/head&gt;
+                        </div>
+                        <div class="btn-action">
+                            <button class="button">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="d-title ">
+                        <svg class="icon" width="16" height="18" viewBox="0 0 16 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.7455 3.81698L11.6116 0.683053C11.24 0.3114 10.4967 1.62125e-05 9.96429 1.62125e-05H0.964286C0.43192 1.62125e-05 0 0.431937 0 0.964303V17.0357C0 17.5681 0.43192 18 0.964286 18H14.4643C14.9967 18 15.4286 17.5681 15.4286 17.0357V5.4643C15.4286 4.93194 15.1172 4.18863 14.7455 3.81698ZM10.2857 1.36609C10.4565 1.42636 10.6272 1.51676 10.6975 1.58707L13.8415 4.73104C13.9118 4.80136 14.0022 4.97212 14.0625 5.14287H10.2857V1.36609ZM14.1429 16.7143H1.28571V1.28573H9V5.4643C9 5.99667 9.43192 6.42859 9.96429 6.42859H14.1429V16.7143ZM4.82143 7.7143L2.55134 10.7377C2.47098 10.8482 2.47098 11.0089 2.55134 11.1194L4.82143 14.1429C4.93192 14.2835 5.13281 14.3136 5.27344 14.2031L5.78571 13.8214C5.92634 13.711 5.95647 13.5101 5.84598 13.3694L4.01786 10.9286L5.84598 8.48774C5.95647 8.34712 5.92634 8.14622 5.78571 8.03573L5.27344 7.65403C5.13281 7.54354 4.93192 7.57368 4.82143 7.7143ZM12.8772 10.7377L10.6071 7.7143C10.4967 7.57368 10.2958 7.54354 10.1551 7.65403L9.64286 8.03573C9.50223 8.14622 9.4721 8.34712 9.58259 8.48774L11.4107 10.9286L9.58259 13.3694C9.4721 13.5101 9.50223 13.711 9.64286 13.8214L10.1551 14.2031C10.2958 14.3136 10.4967 14.2835 10.6071 14.1429L12.8772 11.1194C12.9576 11.0089 12.9576 10.8482 12.8772 10.7377ZM6.64955 15.3683L7.28237 15.4688C7.45313 15.4989 7.62388 15.3884 7.65402 15.2076L9.04018 6.86051C9.07031 6.68975 8.95982 6.51899 8.77902 6.48886L8.14621 6.38841C7.97545 6.35828 7.80469 6.46877 7.77455 6.64957L6.38839 14.9967C6.35826 15.1674 6.46875 15.3382 6.64955 15.3683Z"
+                                fill="#1E0E62" />
+                        </svg>
+                        <h3>Great Code</h3>
+                    </div>
+                    <div class="content ">
+                        You’ll get a description of each component and learn how to connect and use them.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>

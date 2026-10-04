@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Inside?</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inconsolata:wght@200..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: #1E0E62;
+            font-family: "DM Sans", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #fff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 970px;
+            margin: 0 auto;
+
+
+        }
+
+
+        h2 {
+            font-weight: 700;
+            line-height: 52px;
+            letter-spacing: -0.4px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 970px !important;
+            height: 370px;
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+
+        thead th {
+            padding: 14px 15px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #A1A1B5;
+        }
+
+        thead th:nth-child(3),
+        thead th:nth-child(4) {
+            text-align: justify;
+        }
+
+        tbody tr:nth-child(odd) {
+            background: #F7F7F7;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-radius: 5px 0px 0px 0px;
+        }
+
+        tbody td {
+            padding: 16px 15px;
+            font-size: 14px;
+        }
+
+        .feature {
+            width: 20%;
+            font-weight: 400;
+            color: #1E0E62;
+            width: 71px;
+            height: 26px;
+
+
+
+        }
+
+        .description {
+            width: 45%;
+            color: #B3B3C4;
+            font-size: 13px;
+
+
+        }
+
+        .free,
+        .pro {
+            width: 17%;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            letter-spacing: 0px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .head {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        thead {
+            max-width: 818px;
+            width: 100%;
+            height: 26px;
+            opacity: 1;
+
+        }
+
+        .box {
+            max-width: 970px;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        input {
+            padding: 20px;
+            outline: none;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>What's Inside?</h2>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3484.297625292984!2d75.71978737404206!3d29.15590056012455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391233d0d797efb7%3A0x90a59576018cca5f!2sRadial%20Code!5e0!3m2!1sen!2sin!4v1789623919966!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+
+            <form action="">
+                <input required type="email" name="" id="" placeholder="kdsjandkjsabdjkh">
+                <textarea required rows="7" name="" id="" placeholder="dhagbdjgd"></textarea>
+                <input required type="text" name="" id="" placeholder="kdjhaJKDH">
+                <button type="submit">click</button>
+            </form>
+            <div class="box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th></th>
+                            <th>Free</th>
+                            <th>Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="feature">Add Files</td>
+                            <td class="description">Add anything from photos to spreadsheets</td>
+                            <td class="free">5 Mb per file</td>
+                            <td class="pro">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Assign To-dos</td>
+                            <td class="description">Delegate responsibilities like a bos</td>
+                            <td class="free">25 assigns per list</td>
+                            <td class="pro">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Subtasks</td>
+                            <td class="description">Break down large goals into acionable to-dos</td>
+                            <td class="free">25 per to-do</td>
+                            <td class="pro">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Backgrounds</td>
+                            <td class="description">Personalize your Wunderlist just the way you like</td>
+
+                            <td class="free">20 backgrounds</td>
+                            <td class="pro">30 backgrounds</td>
+                        </tr>
+                        <tr>
+                            <td class="feature">Team</td>
+                            <td class="description">Make best team in the world</td>
+
+                            <td class="free">10 members</td>
+                            <td class="pro">Unlimited</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout4</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "DM Sans", sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .head {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .title {
+
+            line-height: 52px;
+            letter-spacing: -0.4px;
+            text-align: center;
+            color: #1E0E62;
+            margin-bottom: 20px;
+
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: 0 auto;
+            align-items: center;
+
+        }
+
+        .subhead {
+
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0px;
+            text-align: center;
+            width: 764px;
+            margin-bottom: 52px;
+            opacity: 0.7;
+
+        }
+
+        .box {
+            width: 270px;
+            height: 160px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #EBEAED;
+        }
+
+        .section {
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .box-grid {
+            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+
+        }
+
+        .box-grid {
+            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+       
+    </style>
+
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="head">
+                <h1 class="title" style="width: 948px;">Trusted by over 500 great businesses
+
+                </h1>
+                <p class="subhead" style="max-width: 764px;">
+                    Startup Framework includes great form options for your startup projects. Each component is coded
+                    forweb which makes creating a website quick and easy.
+                </p>
+
+
+                <div class="box-grid">
+                    <div class="box">
+                        <img width="113px" src="starbucks.png" alt="starbucks logo">
+                    </div>
+                    <div class="box">
+                        <img width="175px" src="Pepsi.png" alt="pepsi logo">
+                    </div>
+                    <div class="box">
+                        <img width="184px" src="walmart.png" alt="walmart logo">
+                    </div>
+                    <div class="box">
+                        <img width="193px" src="Azendoo.png" alt="azendo logo">
+                    </div>
+                    <div class="box">
+                        <img width="120px" src="CNN.png" alt="cnn logo">
+                    </div>
+                    <div class="box">
+                        <img width="162px" src="Philips.png" alt="philips logo">
+                    </div>
+                    <div class="box">
+                        <img width="99px" src="Pizza Hut.png" alt="pizza logo">
+                    </div>
+                    <div class="box">
+                        <img width="185px" src="Beanstalk.png" alt="Beanstalk logo">
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+    </section>
+</body>
+
+</html>
