@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+            background: #fff;
+        }
+
+        .split-page {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        /* Left  */
+        .left-panel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .left-panel::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url(iconbg.png);
+            background-size: 1232px;
+            background-position: center;
+            background-size: inherit;
+            opacity: 6%;
+            z-index: 0;
+        }
+
+        .form-box {
+            width: 100%;
+            max-width: 380px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Right */
+        .sp2 {
+            width: 50%;
+            min-height: 100vh;
+            background-color: #2563EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .sp2::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url(iconbg.png);
+            background-size: cover;
+            background-position: center;
+            opacity: 6%;
+            z-index: 0;
+        }
+
+        /* ==== Form Styles ==== */
+        .form-box h2 {
+            font-weight: 700;
+            font-size: 1.85rem;
+            color: #111;
+        }
+
+        .form-control {
+            height: 48px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            border-color: #5b6cff;
+            box-shadow: 0 0 0 3px rgba(91, 108, 255, 0.2);
+        }
+
+        .btn-signin {
+            background: linear-gradient(90deg, #5b6cff, #3b82f6);
+            border: none;
+            color: white;
+            font-weight: 600;
+            height: 48px;
+            border-radius: 50px;
+            width: 100%;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-signin:hover {
+            opacity: 0.9;
+            color: white;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 28px 0;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e5e7eb;
+        }
+
+        .btn-social {
+            flex: 1;
+            height: 46px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #374151;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-social:hover {
+            background: #f9fafb;
+            color: #111;
+            border-color: #d1d5db;
+        }
+
+        /* ==== Right === */
+        .rp {
+            position: relative;
+            width: min(499px, 90%);
+            aspect-ratio: 1/1;
+            z-index: 1;
+        }
+
+        .circle {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: auto;
+            z-index: 2;
+        }
+
+        .union {
+            position: absolute;
+            top: 50%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            width: 43%;
+            height: auto;
+            z-index: 3;
+        }
+
+        .icon {
+            position: absolute;
+            width: 12.8%;
+            height: auto;
+            z-index: 4;
+        }
+
+        .fb {
+            top: 14%;
+            left: 2%;
+        }
+
+        .linkedin {
+            top: 33%;
+            left: 2%;
+        }
+
+        .instagram {
+            top: 56%;
+            left: 2%;
+        }
+
+        .twitter {
+            top: 75%;
+            left: 2%;
+        }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 78%;
+            transform: translate(-50%, -50%);
+            width: 49.5%;
+            height: auto;
+            z-index: 5;
+            object-fit: contain;
+        }
+
+
+        @media (max-width: 1400px) {
+            .rp {
+                width: min(440px, 85%);
+            }
+        }
+
+        /* Tablets & below */
+        @media (max-width: 992px) {
+            .split-page {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                width: 100%;
+                min-height: auto;
+                padding: 50px 24px;
+            }
+
+            .sp2 {
+                width: 100%;
+                min-height: 55vh;
+                padding: 40px 20px;
+            }
+
+            .form-box {
+                max-width: 420px;
+            }
+
+            .rp {
+                width: min(380px, 80%);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 576px) {
+            .left-panel {
+                padding: 40px 20px;
+            }
+
+            .form-box h2 {
+                font-size: 1.6rem;
+            }
+
+            .btn-social {
+                font-size: 0.9rem;
+                height: 44px;
+            }
+
+            .sp2 {
+                min-height: 50vh;
+            }
+
+            .rp {
+                width: min(320px, 90%);
+            }
+
+            .fb {
+                top: 12%;
+                left: 1%;
+            }
+
+            .linkedin {
+                top: 32%;
+                left: 1%;
+            }
+
+            .instagram {
+                top: 54%;
+                left: 1%;
+            }
+
+            .twitter {
+                top: 74%;
+                left: 1%;
+            }
+        }
+
+        /*  small phones */
+        @media (max-width: 400px) {
+            .form-box {
+                max-width: 100%;
+            }
+
+            .btn-social span {
+                display: none;
+            }
+
+            .btn-social {
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="split-page">
+        <!-- =LS== -->
+        <div class="left-panel">
+            <div class="form-box">
+                <!-- Logo -->
+                <div style="margin-bottom: 48px;">
+                    <svg style="cursor: pointer;" width="277" height="48" viewBox="0 0 277 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M73.3874 11.8342C66.2811 11.8342 61.3289 16.605 61.3289 23.9396V42.2791H66.7845V31.7776C68.3884 34.3005 71.0928 35.6762 74.3532 35.6762C79.8498 35.6762 85.6274 31.7308 85.6274 23.9864C85.6274 16.7864 80.5874 11.8342 73.3874 11.8342ZM73.4284 30.5893C69.442 30.5893 66.7845 27.7445 66.7845 23.7581C66.7845 19.7718 69.442 16.9269 73.4284 16.9269C77.4147 16.9269 80.125 19.7659 80.125 23.7581C80.125 27.7503 77.4147 30.5893 73.4284 30.5893Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M100.759 11.8342C93.6059 11.8342 88.5601 16.8801 88.5601 23.7581C88.5601 30.6362 93.6001 35.682 100.759 35.682C107.918 35.682 112.958 30.6362 112.958 23.7581C112.958 16.8801 107.912 11.8342 100.759 11.8342ZM100.759 30.5893C96.7727 30.5893 94.0684 27.7445 94.0684 23.7581C94.0684 19.7718 96.7727 16.9269 100.759 16.9269C104.745 16.9269 107.403 19.7659 107.403 23.7581C107.403 27.7503 104.745 30.5893 100.759 30.5893Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M126.205 21.4225C123.776 21.1006 121.709 20.8254 121.709 19.081C121.709 17.7523 122.903 16.605 125.286 16.605C127.44 16.605 128.722 17.5649 128.857 18.9406H134.271C134.137 14.9542 130.741 11.8342 125.192 11.8342C119.643 11.8342 116.207 14.8664 116.207 19.4967C116.207 25.0401 121.34 25.6371 124.829 26.0996C127.259 26.4215 129.278 26.6498 129.278 28.3884C129.278 29.764 128.084 30.9113 125.292 30.9113C122.5 30.9113 121.305 29.8986 121.259 28.3884H115.756C115.891 32.6089 119.52 35.682 125.298 35.682C131.075 35.682 134.792 32.6557 134.792 28.0664C134.792 22.4235 129.243 21.8323 126.217 21.4225H126.205Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M150.896 25.7777V26.3748C150.896 29.4479 149.339 30.5952 147.091 30.5952C144.843 30.5952 143.28 29.4011 143.28 26.3748V17.3894H156.351V12.4372H143.28V6.11523H137.824V26.3748C137.824 32.6557 141.588 35.6821 147.091 35.6821C152.593 35.6821 156.351 32.6557 156.351 26.3748V25.7777H150.896Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M171.079 11.8342C163.879 11.8342 158.833 16.7923 158.833 23.9864C158.833 31.7308 164.611 35.6762 170.113 35.6762C173.69 35.6762 176.763 33.9786 178.138 30.6303V35.0791H183.137V23.9337C183.137 16.6401 178.185 11.8284 171.079 11.8284V11.8342ZM171.032 30.5893C167.046 30.5893 164.341 27.7445 164.341 23.7581C164.341 19.7718 167.046 16.9269 171.032 16.9269C175.018 16.9269 177.682 19.7659 177.682 23.7581C177.682 27.7503 175.024 30.5893 171.032 30.5893Z"
+                            fill="#6F6AF8" />
+                        <path d="M186.714 6.11523V35.085H192.169V6.11523H186.714Z" fill="#6F6AF8" />
+                        <path
+                            d="M207.834 11.8342C200.681 11.8342 195.635 16.8801 195.635 23.7581C195.635 30.6362 200.681 35.682 207.834 35.682C214.987 35.682 220.033 30.6362 220.033 23.7581C220.033 16.8801 214.987 11.8342 207.834 11.8342ZM207.834 30.5893C203.848 30.5893 201.143 27.7445 201.143 23.7581C201.143 19.7718 203.848 16.9269 207.834 16.9269C211.82 16.9269 214.484 19.7659 214.484 23.7581C214.484 27.7503 211.82 30.5893 207.834 30.5893Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M236.125 25.7777V26.3748C236.125 29.4479 234.562 30.5952 232.314 30.5952C230.066 30.5952 228.509 29.4011 228.509 26.3748V17.3894H241.58V12.4372H228.509V6.11523H223.053V26.3748C223.053 32.6557 226.817 35.6821 232.314 35.6821C237.811 35.6821 241.58 32.6557 241.58 26.3748V25.7777H236.125Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M258.094 25.7777V26.3748C258.094 29.4479 256.537 30.5952 254.289 30.5952C252.041 30.5952 250.478 29.4011 250.478 26.3748V17.3894H263.549V12.4372H250.478V6.11523H245.022V26.3748C245.022 32.6557 248.786 35.6821 254.289 35.6821C259.791 35.6821 263.549 32.6557 263.549 26.3748V25.7777H258.094Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M42.1695 36.9933C42.1695 36.9933 42.1519 37.005 42.1402 37.0108L35.192 41.0206C34.1968 41.5942 32.9734 41.5942 31.9783 41.0206L25.03 37.0108C25.03 37.0108 25.0124 37.005 25.0007 36.9933C23.3383 36.0098 23.3383 33.5396 25.0007 32.5562C25.0124 32.5503 25.0183 32.5445 25.03 32.5386L31.9783 28.5289C32.9734 27.9552 34.1968 27.9552 35.192 28.5289L42.1402 32.5386C42.1402 32.5386 42.1578 32.5445 42.1695 32.5562C43.832 33.5396 43.832 36.0098 42.1695 36.9933Z"
+                            fill="url(#paint0_linear_49789_3069)" />
+                        <path
+                            d="M31.1529 25.9767C31.1529 25.9767 31.1354 25.9884 31.1236 25.9942L24.1753 30.004C23.1802 30.5776 21.9568 30.5776 20.9617 30.004L14.0134 25.9942C14.0134 25.9942 13.9958 25.9884 13.9841 25.9767C12.3217 24.9932 12.3217 22.523 13.9841 21.5396C13.9958 21.5337 14.0017 21.5279 14.0134 21.522L20.9617 17.5123C21.9568 16.9386 23.1802 16.9386 24.1753 17.5123L31.1236 21.522C31.1236 21.522 31.1412 21.5279 31.1529 21.5396C32.8153 22.523 32.8153 24.9932 31.1529 25.9767Z"
+                            fill="url(#paint1_linear_49789_3069)" />
+                        <path
+                            d="M53.1861 25.9767C53.1861 25.9767 53.1686 25.9884 53.1568 25.9942L46.2086 30.004C45.2134 30.5776 43.99 30.5776 42.9949 30.004L36.0466 25.9942C36.0466 25.9942 36.029 25.9884 36.0173 25.9767C34.3549 24.9932 34.3549 22.523 36.0173 21.5396C36.029 21.5337 36.0349 21.5279 36.0466 21.522L42.9949 17.5123C43.99 16.9386 45.2134 16.9386 46.2086 17.5123L53.1568 21.522C53.1568 21.522 53.1744 21.5279 53.1861 21.5396C54.8485 22.523 54.8485 24.9932 53.1861 25.9767Z"
+                            fill="#6F6AF8" />
+                        <path
+                            d="M42.1695 14.9601C42.1695 14.9601 42.1519 14.9718 42.1402 14.9776L35.192 18.9874C34.1968 19.5611 32.9734 19.5611 31.9783 18.9874L25.03 14.9776C25.03 14.9776 25.0124 14.9718 25.0007 14.9601C23.3383 13.9767 23.3383 11.5064 25.0007 10.523C25.0124 10.5171 25.0183 10.5113 25.03 10.5054L31.9783 6.49567C32.9734 5.92202 34.1968 5.92202 35.192 6.49567L42.1402 10.5054C42.1402 10.5054 42.1578 10.5113 42.1695 10.523C43.832 11.5064 43.832 13.9767 42.1695 14.9601Z"
+                            fill="#6F6AF8" />
+                        <defs>
+                            <linearGradient id="paint0_linear_49789_3069" x1="23.7598" y1="34.7747" x2="43.4163"
+                                y2="34.7747" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#84F8B2" />
+                                <stop offset="1" stop-color="#8CDCE2" />
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_49789_3069" x1="12.7373" y1="23.7581" x2="32.3997"
+                                y2="23.7581" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#84F8B2" />
+                                <stop offset="1" stop-color="#8CDCE2" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <h2 class="mb-2">Sign in</h2>
+                <p class="text-muted mb-4">
+                    Don't have an account?
+                    <a href="#" class="text-decoration-none fw-medium" style="color:#5b6cff;">Register here</a>
+                </p>
+
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="visually-hidden">Email</label>
+                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Email"
+                            required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="visually-hidden">Password</label>
+                        <input type="password" class="form-control form-control-lg" id="password" placeholder="Password"
+                            required>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label text-muted" for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="text-decoration-none" style="color:#5b6cff; font-size:0.9rem;">Forgot
+                            password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-signin">Sign in</button>
+                </form>
+
+                <div class="divider">or continue with</div>
+
+                <div class="d-flex gap-3">
+                    <a href="https://accounts.google.com/" class="btn-social" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M19.5999 10.2219C19.5999 9.3997 19.5332 8.7997 19.3888 8.17749H10V11.8885H15.511C15.4 12.8108 14.8 14.1997 13.4666 15.1329L13.4479 15.2572L16.4165 17.5569L16.6222 17.5774C18.511 15.833 19.5999 13.2663 19.5999 10.2219Z"
+                                fill="#4285F4" />
+                            <path
+                                d="M10.0002 19.9999C12.7001 19.9999 14.9668 19.111 16.6224 17.5777L13.4668 15.1333C12.6224 15.7221 11.489 16.1333 10.0002 16.1333C7.35578 16.1333 5.11137 14.3889 4.3113 11.9778L4.19403 11.9877L1.10726 14.3766L1.06689 14.4888C2.71131 17.7555 6.08908 19.9999 10.0002 19.9999Z"
+                                fill="#34A853" />
+                            <path
+                                d="M4.31104 11.9777C4.09994 11.3555 3.97776 10.6888 3.97776 9.99995C3.97776 9.31102 4.09994 8.64438 4.29993 8.02217L4.29434 7.88966L1.16889 5.4624L1.06663 5.51104C0.388891 6.86661 0 8.38885 0 9.99995C0 11.611 0.388891 13.1332 1.06663 14.4888L4.31104 11.9777Z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M10.0002 3.86662C11.8779 3.86662 13.1446 4.67772 13.8668 5.35554L16.689 2.59998C14.9557 0.988887 12.7001 0 10.0002 0C6.08908 0 2.71131 2.24441 1.06689 5.51103L4.30019 8.02216C5.11137 5.61107 7.35579 3.86662 10.0002 3.86662Z"
+                                fill="#EB4335" />
+                        </svg>
+                        <span>Google</span>
+                    </a>
+
+                    <a href="https://www.facebook.com/" class="btn-social" target="_blank" rel="noopener">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path
+                                d="M20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 14.9913 3.65686 19.1283 8.4375 19.8785V12.8906H5.89844V10H8.4375V7.79688C8.4375 5.29062 9.93044 3.90625 12.2146 3.90625C13.3087 3.90625 14.4531 4.10156 14.4531 4.10156V6.5625H13.1921C11.9499 6.5625 11.5625 7.33333 11.5625 8.12417V10H14.3359L13.8926 12.8906H11.5625V19.8785C16.3431 19.1283 20 14.9913 20 10Z"
+                                fill="#1877F2" />
+                            <path
+                                d="M13.8926 12.8906L14.3359 10H11.5625V8.12417C11.5625 7.33333 11.9499 6.5625 13.1921 6.5625H14.4531V4.10156C14.4531 4.10156 13.3087 3.90625 12.2146 3.90625C9.93044 3.90625 8.4375 5.29062 8.4375 7.79688V10H5.89844V12.8906H8.4375V19.8785C9.47287 20.0405 10.5271 20.0405 11.5625 19.8785V12.8906H13.8926Z"
+                                fill="white" />
+                        </svg>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== RIGHT SIDE ===== -->
+        <div class="sp2">
+            <div class="rp">
+                <img class="circle" src="Ellipse 8.png" alt="">
+                <img class="group" src="Group.png" alt="">
+                <img class="union" src="Union.png" alt="">
+
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+                    <img class="icon fb" src="./fb.png" alt="Facebook">
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener">
+                    <img class="icon linkedin" src="./linkdin.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener">
+                    <img class="icon instagram" src="./insta.png" alt="Instagram">
+                </a>
+                <a href="https://twitter.com/" target="_blank" rel="noopener">
+                    <img class="icon twitter" src="./musk.t.png" alt="Twitter">
+                </a>
+
+                <img class="card" src="card.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

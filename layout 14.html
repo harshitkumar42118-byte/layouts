@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        body {
+            background: #1D1A1A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 24px;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1440px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            gap: 55px;
+        }
+
+        .left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .right {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 1056px;
+            height: auto;
+            opacity: 1;
+
+        }
+
+        .heading h1 {
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 128%;
+            max-width: 100%;
+            margin-bottom: 12px;
+            height: auto;
+            color: white;
+        }
+
+        .heading p {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 180%;
+            opacity: 0.7;
+            margin-bottom: 32px;
+        }
+
+        .points {
+            gap: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .jail {
+            width: 100%;
+            min-height: 92px;
+            border-radius: 46px;
+            background-color: #0C0B0B;
+            flex-direction: row;
+            align-items: center;
+            display: flex;
+            padding: 13px 24px;
+            gap: 20px;
+            cursor: pointer;
+        }
+
+        .jail:hover {
+            .circle {
+                background-color: #FF9900;
+                color: #FFFFFF;
+            }
+        }
+
+        .circle {
+            width: 71px;
+            height: 71px;
+            min-width: 71px;
+            flex-shrink: 0;
+            opacity: 1;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            color: #000;
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ps {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 0;
+        }
+
+        .circle-second {
+            background-color: #FFFFFF;
+            color: #000;
+        }
+
+        .ps h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #FFFFFF;
+            width: 100%;
+            height: auto;
+            line-height: 1.5;
+        }
+
+        .ps p {
+            font-size: 18px;
+            opacity: 0.7;
+            width: 100%;
+            height: auto;
+            line-height: 1.6;
+            overflow-wrap: break-word;
+        }
+
+        @media (max-width: 1200px) {
+            body {
+                padding: 40px 30px;
+            }
+
+            .row {
+                gap: 35px;
+            }
+
+            .heading h1 {
+                font-size: 42px;
+            }
+
+            .heading p {
+                font-size: 16px;
+            }
+
+            .jail {
+                padding: 12px 18px;
+                gap: 15px;
+            }
+
+            .circle {
+                width: 60px;
+                height: 60px;
+                min-width: 60px;
+                font-size: 22px;
+            }
+
+            .ps h3 {
+                font-size: 18px;
+            }
+
+            .ps p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            body {
+                padding: 35px 24px;
+            }
+
+            .row {
+                gap: 24px;
+            }
+
+            .heading h1 {
+                font-size: 36px;
+            }
+
+            .heading p {
+                font-size: 15px;
+                margin-bottom: 24px;
+            }
+
+            .jail {
+                min-height: 78px;
+                border-radius: 39px;
+                padding: 10px 14px;
+                gap: 12px;
+            }
+
+            .circle {
+                width: 52px;
+                height: 52px;
+                min-width: 52px;
+                font-size: 20px;
+            }
+
+            .ps h3 {
+                font-size: 16px;
+            }
+
+            .ps p {
+                font-size: 12px;
+            }
+
+            img {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 30px 20px;
+                align-items: flex-start;
+            }
+
+            .row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 28px;
+            }
+
+            .left,
+            .right {
+                width: 100%;
+                flex: none;
+            }
+
+            .heading h1 {
+                font-size: 36px;
+            }
+
+            .heading p {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .jail {
+                min-height: 82px;
+                padding: 10px 16px;
+                gap: 14px;
+                border-radius: 42px;
+            }
+
+            .circle {
+                width: 56px;
+                height: 56px;
+                min-width: 56px;
+                font-size: 20px;
+            }
+
+            .ps h3 {
+                font-size: 17px;
+            }
+
+            .ps p {
+                font-size: 13px;
+            }
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                margin-top: 0;
+            }
+        }
+
+
+        @media (min-width: 1920px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .row {
+                overflow: visible;
+            }
+
+            .right {
+                overflow: visible;
+                position: relative;
+            }
+
+            .right img {
+                width: 1056px;
+                max-width: none;
+                height: auto;
+                flex-shrink: 0;
+                transform: translateX(260px);
+            }
+
+
+
+        }
+
+        @media (max-width: 380px) {
+            body {
+                padding: 24px 14px;
+            }
+
+            .heading h1 {
+                font-size: 30px;
+            }
+
+            .heading p {
+                font-size: 14px;
+            }
+
+            .jail {
+                padding: 10px 12px;
+                gap: 10px;
+                min-height: 74px;
+            }
+
+            .circle {
+                width: 46px;
+                height: 46px;
+                min-width: 46px;
+                font-size: 18px;
+            }
+
+            .ps h3 {
+                font-size: 14px;
+            }
+
+            .ps p {
+                font-size: 11px;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="heading">
+                        <h1>
+                            How to Buy
+                        </h1>
+                        <p>Urna, dictum volutpat augue tortor. Fermentum vulputate convallis viverra facilisis. Aliquam
+                            porttitor sem rhoncus rhoncus, quis. Arcu, ut enim eget pellentesque neque. Nibh
+                            pellentesque
+                            lobortis etiam sed. Cursus donec porttitor fames tellus.</p>
+                    </div>
+                    <div class="points">
+                        <div class="jail">
+                            <div class="circle">1</div>
+                            <div class="ps">
+                                <h3>Cras nunc libero ac</h3>
+                                <p>Amet, integer et ultrices non viverra dolor dui</p>
+                            </div>
+                        </div>
+
+                        <div class="jail">
+                            <div class="circle circle-second">2</div>
+                            <div class="ps">
+                                <h3>Cras nunc libero ac</h3>
+                                <p>Amet, integer et ultrices non viverra dolor dui</p>
+                            </div>
+                        </div>
+
+                        <div class="jail">
+                            <div class="circle circle-second">3</div>
+                            <div class="ps">
+                                <h3>Cras nunc libero ac</h3>
+                                <p>Amet, integer et ultrices non viverra dolor dui</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="shibaswap.png" alt="website">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
